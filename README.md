@@ -42,18 +42,23 @@ Users should be able to:
 
 ### What I have learnt
 
-
-
-SVG icons are simply implemented in IMG tag.
-```html
-<img class="card__icon" src="./images/icon-sedans.svg">
-```
-
-The mixin to keep aspect ratio, where present values read from svg file:
+To include and position svg files as background elements using pseudo elements.
 ```css
-@mixin card-icon($present_width: 64, $present_height: 40, $desired_height: 3rem){
-  height: #{$desired_height};
-  margin-right: calc(100% - #{$desired_height} * #{$present_width} / #{$present_height});
+.wrapper__card {
+  &::before {
+    content: '';
+    background-image: url(./images/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 100%;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 34%;
+    right: 52%;
+  }
+  ...
 }
 ```
 ## Author

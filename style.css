@@ -51,10 +51,14 @@ body::after {
   bottom: 34%;
   right: 52%;
 }
+@media (max-width: 430px) {
+  .wrapper__card {
+    width: 100vw;
+  }
+}
 @media (max-width: 375px) {
   .wrapper__card {
     height: 100vh;
-    width: 100vw;
   }
 }
 .wrapper__card::after {
